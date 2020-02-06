@@ -25,14 +25,23 @@
                     transform:scaleY(.01) scaleX(0);
                     animation:unfoldIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
                 }
+                #closeIcon {
+                    border-radius: 50%;
+                    font-size: 30px;
+                    margin: auto;
+                    height: 40px;
+                }
                 .modal-header {
                     display: flex;
-                    padding: 2px 16px;
                     color: #fff;
                     justify-content: flex-end;
                     position: absolute;
-                    right: -31px;
-                    top: -42px;
+                    right: -35px;
+                    top: -35px;
+                    width: 40px;
+                    height: 40px;
+                    background: #000;
+                    border-radius: 50%;
                 }
                 .modal-header img {
                     width: 40px;
@@ -104,7 +113,7 @@
             </style>
             <div class="modal-content">
                 <div class="modal-header">
-                    <div id="closeIcon"><img src="./images/close.png" /></div>
+                    <div id="closeIcon">&times;</div>
                 </div>
                 <div class="modal-body">
                     <p>Some text in the Modal Body</p>
