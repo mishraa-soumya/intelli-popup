@@ -28,13 +28,13 @@
                 #closeIcon {
                     border-radius: 50%;
                     font-size: 30px;
-                    margin: auto;
                     height: 40px;
+                    line-height: 35px;
                 }
                 .modal-header {
                     display: flex;
                     color: #fff;
-                    justify-content: flex-end;
+                    justify-content: center;
                     position: absolute;
                     right: -35px;
                     top: -35px;
