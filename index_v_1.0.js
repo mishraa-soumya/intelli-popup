@@ -1,11 +1,8 @@
 (function(){
     const LicenseKey = document.currentScript.getAttribute('lkey');
-    console.log(`${LicenseKey}`);
-    // fetch('http://10.128.222.184:8000/api/script/79627aa7-1268-44fa-90a0-aa95d4437a3a')
-    fetch('http://www.mocky.io/v2/5e3cee292d00002800d95997')
+    fetch('http://10.128.222.184:8000/api/script/79627aa7-1268-44fa-90a0-aa95d4437a3a')
     .then(response => response.text())
     .then(data => {
-        console.log(data);
         const txt = document.createElement("textarea");
         txt.innerHTML = data;
         const htmlString = data;
@@ -123,9 +120,9 @@
             </div>`;
         modalDiv.innerHTML = modal;
         document.body.appendChild(modalDiv);
+        document.cookie = "iPop=true; expires=Fri, 08 Feb 2020 12:00:00 UTC; path=/";
         // Close Icon Functionality
         document.getElementById("closeIcon").addEventListener("click", () => {
-            console.log("Close Icon");
             const modalElem = document.getElementById("intellipopup");
             modalElem.innerHTML = "";
         });
