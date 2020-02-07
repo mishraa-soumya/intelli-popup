@@ -1,6 +1,6 @@
 (function(){
     const LicenseKey = document.currentScript.getAttribute('lkey');
-    fetch('http://10.128.222.184:8000/api/script/79627aa7-1268-44fa-90a0-aa95d4437a3a')
+    fetch(`http://10.128.222.184:8000/api/script/${LicenseKey}`)
     .then(response => response.text())
     .then(data => {
         const txt = document.createElement("textarea");
