@@ -3,6 +3,7 @@
     fetch(`http://10.128.222.184:8000/api/script/${LicenseKey}`)
     .then(response => response.text())
     .then(data => {
+      if (data) {
         const txt = document.createElement("textarea");
         txt.innerHTML = data;
         const htmlString = data;
@@ -124,14 +125,9 @@
         // Close Icon Functionality
         document.getElementById("closeIcon").addEventListener("click", () => {
             const modalElem = document.getElementById("intellipopup");
-            modalElem.innerHTML = "";
+            modalElem.parentNode.removeChild(modalElem)
         });
+      }
     });
-    const getQueryParams = ( params, url ) => {
-        let href = url;
-        //this expression is to get the query strings
-        let reg = new RegExp( '[?&]' + params + '=([^&#]*)', 'i' );
-        let queryString = reg.exec(href);
-        return queryString ? queryString[1] : null;
-    };
+    
 })();
