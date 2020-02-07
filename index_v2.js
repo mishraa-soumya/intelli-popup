@@ -1,11 +1,14 @@
 (function(){
     const LicenseKey = document.currentScript.getAttribute('lkey');
     console.log(`${LicenseKey}`);
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json => {
-        console.log(json);
-        const htmlString = `<div>This is API Result ${JSON.stringify(json)}</div>`;
+    // fetch('http://10.128.222.184:8000/api/script/79627aa7-1268-44fa-90a0-aa95d4437a3a')
+    fetch('http://www.mocky.io/v2/5e3cee292d00002800d95997')
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+        const txt = document.createElement("textarea");
+        txt.innerHTML = data;
+        const htmlString = data;
         var modalDiv = document.createElement('div');
         modalDiv.setAttribute('id', 'intellipopup');
         const modal = `
@@ -46,20 +49,19 @@
                 .modal-header img {
                     width: 40px;
                 }
-                .modal-body {padding: 2px 16px;}
                 .modal-footer {
                     padding: 2px 16px;
-                    // background-color: #5cb85c;
+                    
                     color: #fff;
                 }
                 .modal-content {
                     position: relative;
                     background-color: #fefefe;
                     margin: auto;
-                    margin-top: 5%;
+                    margin-top: 2%;
                     padding: 0;
                     border: 1px solid #888;
-                    width: 80%;
+                    width: 83.4%;
                     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
                     animation-name: animatetop;
                     animation-duration: 0.4s
@@ -116,22 +118,7 @@
                     <div id="closeIcon">&times;</div>
                 </div>
                 <div class="modal-body">
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>Some other text...</p>
-                    <p>Some text in the Modal Body</p>
-                    <p>${htmlString}</p>
+                    <div>${htmlString}</div>
                 </div>
             </div>`;
         modalDiv.innerHTML = modal;
